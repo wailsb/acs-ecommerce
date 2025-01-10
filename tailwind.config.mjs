@@ -6,11 +6,17 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    darkMode: ['class', '[data-theme="dark"]'],
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+  		colors: {
+			background: 'hsl(var(--background))',
+			foreground: 'hsl(var(--foreground))',
+      iconColor:'hsl(var(--icon-color))',
+  		black: 'black',
+  		white: 'white',
+  		gray1: '#232327',
+  		transparent: 'transparent'
+  		},
     },
   },
   plugins: [],

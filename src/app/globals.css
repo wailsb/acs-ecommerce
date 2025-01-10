@@ -3,19 +3,80 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  
+  --navbg:#232327;
+  --icon-color:white;
+  --inbg:var(--navbg);
+  --bg:#151515;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme="light"] {
+  
+  --bg:beige;
+  --inbg:rgb(255, 172, 172);
 }
-
+li{
+  list-style: none;
+}
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+}
+.SearchElement{
+  border: solid rgba(255, 255, 255, 0.491) 2px; ;
+  font-size: 16px;
+  color: white;
+  background-color: var(--inbg);
+  background-image: url('/searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  background-size: 30px;
+}
+.SearchElement:focus{
+  outline: none;
+  z-index: 2;
+}
+.ContainSrc{
+  top: 130px;
+  position: absolute;
+  z-index: 1;
+  border-bottom-right-radius:20px ;
+  border-bottom-left-radius: 20px;
+  background: #c6c6c6;
+  color: var(--navbg);
+  padding: 20px;
+}
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.dotactive{
+  
+  cursor: pointer;
+  height: 10px;
+  width: 25px;
+  margin: 0 2px;
+  background-color: #E35456;
+  border-radius: 20px;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.navABS{
+  height: 86px;
+  width: 100%;
+  background-color: var(--navbg);
+  display: flex;
+
+}
+img{
+  max-width: unset;
+}
+@media (max-width:500px) {
 }
