@@ -1,16 +1,12 @@
 'use client';
 import React from 'react';
 
-const clickEv = (toToggle) => {
-  // Define your event handling logic here
-};
-
-const LiSide = (toToggle) => {
+const LiSide = ({ toggleSidebar }) => {
   return (
-    <li className="your-custom-class"> {/* Retain your custom classes */}
-      <button 
+    <li className="your-custom-class">
+      <button
         className="flex items-center justify-center w-10 h-10 border-none bg-transparent cursor-pointer outline-none"
-        onClick={() => clickEv(toToggle)}
+        onClick={toggleSidebar} // Call toggleSidebar when the button is clicked
       >
         <svg
           className="w-6 h-6"
@@ -18,8 +14,7 @@ const LiSide = (toToggle) => {
           viewBox="0 0 24 24"
           fill="none"
           strokeWidth="2"
-          style={{ stroke: 'var(--icon-color)' }} 
-          // Add dynamic stroke color
+          style={{ stroke: 'var(--icon-color)' }}
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>

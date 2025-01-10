@@ -21,6 +21,7 @@ export default function ThemeToggle() {
 
   return (
     <button
+    disabled={true}
       onClick={toggleTheme}
       className="flex items-center p-2 bg-transparent rounded cursor-pointer"
     >

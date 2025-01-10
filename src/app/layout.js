@@ -1,9 +1,13 @@
+"use client";
 import { Geist, Geist_Mono, Lisu_Bosa } from "next/font/google";
+import ACSidebar from "@/Components/ACSidebar";
+import { useState } from 'react';
 import "./globals.css";
 
 import localFont from "next/font/local";
 import Nav from "@/Components/Nav";
 import LiSide from "@/Components/LiSide";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -18,24 +22,32 @@ const geistMono = localFont({
 export default function RootLayout({
   children,
 }){
-  return <html lang="en">
-    <head>
-      <title>ACS</title>
-    </head>
+  const [TogSide, TogIt] = useState(false);
+
+  const toggleSidebar = () => {
+    TogIt(!TogSide); // Toggle the sidebar state
+  };
+
+  return (
+    <html lang="en">
+      <head>
+        <title>ACS</title>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         cz-shortcut-listen="true"
       >
-          <main className="w-full">
-            
-            <Nav>  
-              <LiSide>
-                <div/>
-              </LiSide>
-            </Nav>
-            {children}
-          </main>
+        {/* Sidebar */}
+        <ACSidebar isSidebarVisible={TogSide} toggleSidebar={toggleSidebar} />
+
+        {/* Main Content */}
+        <main className="w-full">
+          <Nav>
+            <LiSide toggleSidebar={toggleSidebar} />
+          </Nav>
+          {children}
+        </main>
       </body>
     </html>
-  
+  );
 }
