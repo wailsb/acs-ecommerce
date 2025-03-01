@@ -1,8 +1,7 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 export default function Banner() {
-  // List of banner images
   const banners = [
     "/banner.webp",
     "/banner2.webp",
@@ -10,44 +9,40 @@ export default function Banner() {
     "/banner4.webp",
   ];
 
-  // State to track the current banner index
   const [currentBanner, setCurrentBanner] = useState(0);
 
-  // Function to handle dot clicks
   const handleDotClick = (index) => {
     setCurrentBanner(index);
   };
 
-  // Timer to automatically change banners
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentBanner((prev) => (prev + 1) % banners.length); // Cycle through banners
-    }, 3000); // Change banner every 3 seconds
+      setCurrentBanner((prev) => (prev + 1) % banners.length);
+    }, 3000);
 
-    return () => clearInterval(interval); // Cleanup interval on component unmount
+    return () => clearInterval(interval);
   }, [banners.length]);
 
   return (
-    <div className="bg-transparent flex flex-col items-center justify-center w-4/5 mt-5 relative min-h-[250px]">
-      {/* Banner Image Container */}
-      <div className="w-full flex justify-center max-h-[250px]">
-        <img
-          src={banners[currentBanner]}
-          className="max-w-full max-h-[250px] rounded-xl"
-          alt="Banner"
-        />
-      </div>
+    <div className="relative w-full h-[250px] rounded-xl overflow-hidden">
+      {/* Banner Image */}
+      <img
+        src={banners[currentBanner]}
+        className="w-full h-full object-cover"
+        alt="Banner"
+      />
 
       {/* Dots for Navigation */}
-      <div className="absolute bottom-[-20] left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {banners.map((_, index) => (
-          <span
+          <button
             key={index}
-            className={`dot ${
-              index === currentBanner ? 'dotactive w-[25px]' : 'w-[10px]'
-            } h-[3px]`}
+            className={`w-3 h-3 rounded-full transition-all ${
+              index === currentBanner ? "bg-white" : "bg-gray-400"
+            }`}
             onClick={() => handleDotClick(index)}
-          ></span>
+            aria-label={`Go to banner ${index + 1}`}
+          />
         ))}
       </div>
     </div>

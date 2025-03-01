@@ -32,13 +32,13 @@ export default function ACSidebar({ isSidebarVisible, toggleSidebar }) {
             </Link>
           </li>
           <li>
-            <Link href="/shop" className="flex items-center p-2 hover:bg-[var(--inbg)] rounded-lg transition-colors text-[#E35456]">
+            <Link href="/Shop" className="flex items-center p-2 hover:bg-[var(--inbg)] rounded-lg transition-colors text-[#E35456]">
               <FaShoppingCart className="mr-2" /> {/* Shop icon */}
               Shop
             </Link>
           </li>
           <li>
-            <Link href="/wishlist" className="flex items-center p-2 hover:bg-[var(--inbg)] rounded-lg transition-colors text-[#E35456]">
+            <Link href="/Wish" className="flex items-center p-2 hover:bg-[var(--inbg)] rounded-lg transition-colors text-[#E35456]">
               <FaHeart className="mr-2" /> {/* Wishlist icon */}
               Wishlist
             </Link>

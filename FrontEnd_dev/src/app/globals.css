@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  
+  --text:white;
   --navbg:#232327;
   --icon-color:white;
   --inbg:var(--navbg);
@@ -12,8 +12,10 @@
 
 [data-theme="light"] {
   
-  --bg:beige;
-  --inbg:rgb(255, 172, 172);
+  --bg: #ffffff; /* Light background */
+  --text: #1a1a1a; /* Dark text */
+  --navbg: #4e5e7d; /* Navbar background */
+  --icon-color: #1a1a1a; /* Icon color */
 }
 li{
   list-style: none;
@@ -86,6 +88,27 @@ body {
 }
 img{
   max-width: unset;
+}
+.prose {
+  color: var(--text);
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: var(--text);
+}
+
+.prose a {
+  color: #3b82f6; /* Blue-500 */
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: #2563eb; /* Blue-600 */
 }
 @media (max-width:500px) {
 }
