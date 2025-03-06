@@ -44,13 +44,13 @@ export default function ACSidebar({ isSidebarVisible, toggleSidebar }) {
             </Link>
           </li>
           <li>
-            <Link href="/about" className="flex items-center p-2 hover:bg-[var(--inbg)] rounded-lg transition-colors text-[#E35456]">
+            <Link href="/About" className="flex items-center p-2 hover:bg-[var(--inbg)] rounded-lg transition-colors text-[#E35456]">
               <FaInfoCircle className="mr-2" /> {/* About Us icon */}
               About Us
             </Link>
           </li>
           <li>
-            <Link href="/faq" className="flex items-center p-2 hover:bg-[var(--inbg)] rounded-lg transition-colors text-[#E35456]">
+            <Link href="/FAQ" className="flex items-center p-2 hover:bg-[var(--inbg)] rounded-lg transition-colors text-[#E35456]">
               <FaQuestionCircle className="mr-2" /> {/* FAQ icon */}
               FAQ
             </Link>
