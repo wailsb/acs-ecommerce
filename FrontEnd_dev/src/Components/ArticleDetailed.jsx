@@ -23,7 +23,7 @@ export default function ArticleDetailed() {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-[var(--bg)] text-[var(--text)] p-6">
+    <div className="flex flex-col items-center min-h-screen bg-[var(--artBg)] text-[var(--text)] p-6">
       {/* Back Button */}
       <div className="w-full max-w-4xl mb-6">
         <Link
@@ -45,7 +45,7 @@ export default function ArticleDetailed() {
 
         {/* Article Details */}
         <div className="p-6">
-          <h1 className="text-3xl font-bold mb-4">{article.title}</h1>
+          <h1 className="text-[var(--text)] text-3xl font-bold mb-4">{article.title}</h1>
 
           {/* Article Content (HTML rendered safely) */}
           <div

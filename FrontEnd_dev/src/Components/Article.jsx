@@ -8,8 +8,8 @@ export default function Article({ title, image, url }) {
         src={image}
         alt={title}
       />
-      <div className="bg-gray-800 p-4">
-        <h3 className="text-white font-bold text-lg">{title}</h3>
+      <div className="bg-[var(--artBg)] p-4">
+        <h3 className="text-[var(--text)] font-bold text-lg">{title}</h3>
         <a
           href={url}
           className="text-blue-400 hover:text-blue-300 mt-2 inline-block"

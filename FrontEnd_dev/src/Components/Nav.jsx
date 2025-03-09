@@ -3,6 +3,10 @@ import { Children } from "react";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Nav({ children }) {
+  const handleProfileClick = () => {
+    window.location.href = "/Sign";
+  };
+
   return (
     <div className="navABS">
       <div className="grow-[0] shrink-[0] basis-[0] content-center m-[20px]">
@@ -16,7 +20,7 @@ export default function Nav({ children }) {
       <div className="grow-[0] shrink-[0] basis-[0] content-center mr-2">
         <ThemeToggle />
       </div>
-      <div className="grow-[0] shrink-[0] basis-[0] content-center m-[20px]">
+      <div className="grow-[0] shrink-[0] basis-[0] content-center m-[20px]" onClick={handleProfileClick}>
         <span>
           <svg
             width="19"

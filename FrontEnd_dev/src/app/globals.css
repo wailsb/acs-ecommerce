@@ -3,19 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --text:white;
-  --navbg:#232327;
   --icon-color:white;
+  --text:white;
+  --artBg:#4e5e7d;
+  --navbg:#232327;
   --inbg:var(--navbg);
   --bg:#151515;
+  --bg2:#4e5e7d;
 }
 
 [data-theme="light"] {
-  
+  --icon-color: #1a1a1a; 
   --bg: #ffffff; /* Light background */
   --text: #1a1a1a; /* Dark text */
-  --navbg: #4e5e7d; /* Navbar background */
-  --icon-color: #1a1a1a; /* Icon color */
+  --artBg:white;
+  --navbg: #4e5e7d; /* Navbar background *//* Icon color */
+  --bg2:white;
 }
 li{
   list-style: none;
